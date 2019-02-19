@@ -6,7 +6,43 @@
         xmlns:local="clr-namespace:CustomerSupplierCodingChallenge"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="containerGrid" Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="titleBlock" TextWrapping="Wrap" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" Grid.Column="1"><Run Text=" "/><Run Text="Customer Supplier Coding Challenge"/></TextBlock>
+        <Canvas x:Name="graphCanvas" Margin="0" Grid.Row="1" Grid.Column="1" Height="250" Width="500"/>
+
+        <Grid Margin="0.333,249.667,146.333,-0.333" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="500" Height="86" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Canvas Height="22" Width="415" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="30" Canvas.Top="54" Margin="0">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Number of customers:" VerticalAlignment="Top" Canvas.Top="1"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Number of suppliers:" VerticalAlignment="Top" Canvas.Left="227" Canvas.Top="1"/>
+                <TextBox x:Name="customerInput" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Canvas.Left="136"/>
+                <TextBox x:Name="supplierInput" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Canvas.Left="355"/>
+                <TextBlock x:Name="errorBlock" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Red" Grid.ColumnSpan="2" Height="16" Grid.Row="2"/>
+            </Canvas>
+        </Grid>
+        <Button x:Name="drawBtn" Content="Draw" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Canvas.Left="442" Click="onDrawBtnClicked" Grid.Column="2" Grid.Row="2"/>
+
+        <Canvas Margin="110,345,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+        </Canvas>
+
+        <Canvas Height="111" Width="95" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="30" Canvas.Top="10" Margin="0" Grid.Row="1">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Grid size:" VerticalAlignment="Top" Canvas.Left="23" Canvas.Top="2" FontWeight="Bold" Height="22"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="X:" VerticalAlignment="Top" Canvas.Left="3" Canvas.Top="38"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Y:" VerticalAlignment="Top" Canvas.Left="3" Canvas.Top="81"/>
+            <TextBox x:Name="gridXInput" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Canvas.Left="23" Canvas.Top="36"/>
+            <TextBox x:Name="gridYInput" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Canvas.Left="23" Canvas.Top="79"/>
+        </Canvas>
+
     </Grid>
 </Window>
